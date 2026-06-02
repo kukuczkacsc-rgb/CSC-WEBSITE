@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sprawdź dopłatę do odszkodowania | Zaniżone OC po kolizji</title>
+<meta name="description" content="Otrzymałeś zaniżone odszkodowanie z OC po kolizji lub wypadku? Sprawdź bezpłatnie, czy należy Ci się dopłata. Bez zobowiązań.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,600;9..144,0,700;9..144,1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15201c;--paper:#f4f1ea;--paper-2:#ebe6db;--green:#1d6b4f;
+    --green-deep:#134635;--gold:#c8893b;--line:#d6cfc0;--shadow:rgba(19,70,53,.14);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Outfit',sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .topbar{background:var(--green-deep);color:var(--paper);font-size:.85rem;letter-spacing:.02em;text-align:center;padding:9px 16px}
+  .topbar strong{color:#f0d9b8}
+  header{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;max-width:1080px;margin:0 auto}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem;letter-spacing:.04em;color:var(--green-deep)}
+  .nav-cta{background:var(--green);color:#fff;text-decoration:none;padding:11px 22px;border-radius:40px;font-weight:500;font-size:.95rem;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 18px var(--shadow)}
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px var(--shadow)}
+  .hero{position:relative;overflow:hidden;padding:78px 0 64px}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 420px at 78% -8%, rgba(29,107,79,.13), transparent 60%),radial-gradient(620px 360px at 6% 110%, rgba(200,137,59,.12), transparent 55%);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center;position:relative}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--green);background:rgba(29,107,79,.09);padding:7px 15px;border-radius:30px;margin-bottom:22px}
+  .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
+  h1{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(2.3rem,5vw,3.5rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:20px}
+  h1 em{font-style:italic;color:var(--green)}
+  .lede{font-size:1.12rem;color:#42514a;max-width:46ch;margin-bottom:30px}
+  .hero-points{list-style:none;margin-bottom:34px}
+  .hero-points li{display:flex;gap:11px;align-items:flex-start;margin-bottom:11px;font-size:1.02rem}
+  .hero-points svg{flex:none;margin-top:4px}
+  .btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;text-decoration:none;font-weight:600;font-size:1.05rem;padding:16px 32px;border-radius:48px;box-shadow:0 10px 28px var(--shadow);transition:transform .2s,box-shadow .2s}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 36px var(--shadow)}
+  .reassure{font-size:.88rem;color:#6a7670;margin-top:14px}
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px 30px;box-shadow:0 24px 60px -22px var(--shadow);position:relative}
+  .form-badge{position:absolute;top:-13px;right:24px;background:var(--gold);color:#fff;font-size:.78rem;font-weight:600;letter-spacing:.03em;padding:6px 14px;border-radius:30px;box-shadow:0 6px 16px rgba(200,137,59,.35)}
+  .form-card h2{font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;margin-bottom:6px;letter-spacing:-.01em}
+  .form-card .sub{font-size:.95rem;color:#6a7670;margin-bottom:22px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.9rem;font-weight:500;margin-bottom:6px}
+  .field .opt{color:#9aa39d;font-weight:400}
+  .field input,.field textarea,.field select{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;font-family:inherit;font-size:1rem;color:var(--ink);background:var(--paper);transition:border-color .2s,box-shadow .2s}
+  .field input:focus,.field textarea:focus,.field select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 4px rgba(29,107,79,.12);background:#fff}
+  .field textarea{resize:vertical;min-height:78px}
+  .consent{display:flex;gap:11px;align-items:flex-start;margin:18px 0 22px;font-size:.85rem;color:#42514a;line-height:1.5}
+  .consent input{flex:none;width:20px;height:20px;margin-top:2px;accent-color:var(--green);cursor:pointer}
+  .consent a{color:var(--green);text-decoration:underline}
+  .submit{width:100%;border:none;cursor:pointer;background:var(--gold);color:#fff;font-family:inherit;font-weight:600;font-size:1.08rem;padding:16px;border-radius:48px;box-shadow:0 10px 26px rgba(200,137,59,.32);transition:transform .2s,box-shadow .2s,background .2s}
+  .submit:hover{transform:translateY(-2px);background:#b87b2f;box-shadow:0 16px 32px rgba(200,137,59,.4)}
+  .form-foot{text-align:center;font-size:.8rem;color:#9aa39d;margin-top:14px}
+  .trust{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0}
+  .trust-grid{display:flex;justify-content:space-around;flex-wrap:wrap;gap:28px;text-align:center}
+  .trust-item{flex:1;min-width:160px}
+  .trust-item .num{font-family:'Fraunces',serif;font-weight:700;font-size:2rem;color:var(--green);line-height:1}
+  .trust-item .lbl{font-size:.9rem;color:#5a665f;margin-top:6px}
+  .section{padding:72px 0}
+  .section h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.8rem,3.4vw,2.5rem);text-align:center;letter-spacing:-.02em;margin-bottom:10px}
+  .section .intro{text-align:center;color:#5a665f;max-width:54ch;margin:0 auto 46px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px 26px;position:relative}
+  .step .n{font-family:'Fraunces',serif;font-weight:700;font-size:1.1rem;color:#fff;width:42px;height:42px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .step h3{font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;margin-bottom:8px}
+  .step p{font-size:.96rem;color:#5a665f}
+  .reviews{background:var(--paper)}
+  .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .review{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 26px;display:flex;flex-direction:column}
+  .stars{color:var(--gold);font-size:1.05rem;letter-spacing:2px;margin-bottom:14px}
+  .review p{font-size:1rem;color:#36433d;font-style:italic;margin-bottom:18px;flex:1}
+  .review .who{display:flex;align-items:center;gap:12px}
+  .review .av{width:42px;height:42px;border-radius:50%;background:var(--green);color:#fff;font-family:'Fraunces',serif;font-weight:600;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+  .review .who b{display:block;font-size:.95rem;font-weight:600}
+  .review .who span{font-size:.83rem;color:#8a948e}
+  .amounts{background:var(--green-deep);color:var(--paper);padding:60px 0;text-align:center}
+  .amounts h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.7rem,3.3vw,2.4rem);margin-bottom:8px}
+  .amounts .intro{color:#bcd2c5;max-width:52ch;margin:0 auto 40px}
+  .amount-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .amount{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:26px 20px}
+  .amount .k{font-family:'Fraunces',serif;font-weight:700;font-size:1.7rem;color:#f0d9b8;line-height:1.1}
+  .amount .d{font-size:.92rem;color:#bcd2c5;margin-top:8px}
+  .faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+  details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 24px;overflow:hidden}
+  summary{list-style:none;cursor:pointer;font-weight:600;font-size:1.05rem;padding:20px 0;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";font-family:'Fraunces',serif;font-size:1.6rem;color:var(--green);transition:transform .25s;line-height:1}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{padding:0 0 22px;color:#5a665f;font-size:1rem}
+  .final{background:var(--gold);color:#3a2a12;text-align:center;padding:66px 0}
+  .final h2{font-family:'Fraunces',serif;font-weight:700;font-size:clamp(1.9rem,3.6vw,2.6rem);letter-spacing:-.02em;margin-bottom:16px;color:#2e2009}
+  .final p{color:#5a4322;max-width:50ch;margin:0 auto 30px;font-size:1.05rem}
+  .final .btn-primary{background:var(--green-deep);box-shadow:0 12px 30px rgba(0,0,0,.22)}
+  .final .btn-primary:hover{background:var(--green)}
+  footer{background:var(--ink);color:#9aa39d;font-size:.85rem;padding:34px 0}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;align-items:center}
+  footer a{color:#c4cdc7;text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .steps,.review-grid,.amount-grid{grid-template-columns:1fr}
+    .nav-cta{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Bezpłatna analiza Twojej sprawy &nbsp;·&nbsp; <strong>bez żadnych zobowiązań</strong></div>
+
+<header>
+  <div class="nav">
+    <div class="logo">CSC</div>
+    <a href="#formularz" class="nav-cta">Sprawdź dopłatę</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Zaniżone odszkodowanie z OC</span>
+      <h1>Po kolizji wypłacili Ci <em>za mało?</em> Sprawdź, ile możesz odzyskać.</h1>
+      <p class="lede">Ubezpieczyciele zaniżają odszkodowania komunikacyjne częściej, niż myślisz. Zostaw kontakt — sprawdzimy Twoją sprawę bezpłatnie i bez zobowiązań.</p>
+      <ul class="hero-points">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#1d6b4f"/><path d="M7 12.5l3.2 3L17 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Analiza Twojej szkody nic nie kosztuje</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#1d6b4f"/><path d="M7 12.5l3.2 3L17 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Dotyczy kolizji i wypadków z ostatnich 3 lat</span></li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#1d6b4f"/><path d="M7 12.5l3.2 3L17 9" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Skontaktuje się z Tobą doświadczona kancelaria</span></li>
+      </ul>
+      <a href="#formularz" class="btn-primary">Sprawdź swoją dopłatę<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <p class="reassure">Wypełnienie zajmuje mniej niż minutę. Bez kosztów wstępnych.</p>
+    </div>
+
+    <div class="form-card" id="formularz">
+      <div class="form-badge">Odpowiadamy w 24h</div>
+      <h2>Sprawdź swoją sprawę</h2>
+      <p class="sub">Zostaw dane — oddzwonimy i powiemy, czy należy Ci się dopłata.</p>
+      <!-- ====== WAŻNE: zamień adres w action="" na swój z Formspree ====== -->
+      <form action="https://formspree.io/f/TWOJ_KOD_FORMSPREE" method="POST">
+        <div class="field">
+          <label for="imie">Imię</label>
+          <input type="text" id="imie" name="imie" placeholder="Jak się do Ciebie zwracać?" required>
+        </div>
+        <div class="field">
+          <label for="telefon">Telefon</label>
+          <input type="tel" id="telefon" name="telefon" placeholder="np. 600 100 200" required>
+        </div>
+        <div class="field">
+          <label for="email">E-mail <span class="opt">(opcjonalnie)</span></label>
+          <input type="email" id="email" name="email" placeholder="adres@email.pl">
+        </div>
+        <div class="field">
+          <label for="oc">Czy otrzymałeś już odszkodowanie z OC?</label>
+          <select id="oc" name="otrzymane_odszkodowanie_oc" required>
+            <option value="" disabled selected>Wybierz…</option>
+            <option value="Tak">Tak, dostałem wypłatę</option>
+            <option value="Nie">Nie, jeszcze nie</option>
+            <option value="Nie wiem">Nie jestem pewien</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="opis">Krótko o sprawie — co się stało i kiedy?</label>
+          <textarea id="opis" name="opis_sprawy" placeholder="np. Kolizja w marcu 2024, ubezpieczyciel wypłacił zaniżoną kwotę za naprawę auta."></textarea>
+        </div>
+        <label class="consent">
+          <input type="checkbox" name="zgoda_rodo" required>
+          <span>Wyrażam zgodę na przetwarzanie moich danych osobowych w celu analizy sprawy i przekazania ich współpracującej kancelarii odszkodowawczej, zgodnie z <a href="polityka-prywatnosci.html" target="_blank">polityką prywatności</a>.</span>
+        </label>
+        <button type="submit" class="submit">Wyślij i sprawdź dopłatę →</button>
+        <p class="form-foot">🔒 Twoje dane są bezpieczne. Nie wysyłamy spamu.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="trust">
+  <div class="wrap trust-grid">
+    <div class="trust-item"><div class="num">~95%</div><div class="lbl">kosztorysów bywa zaniżanych przez ubezpieczycieli</div></div>
+    <div class="trust-item"><div class="num">3 lata</div><div class="lbl">tyle masz czasu na dochodzenie roszczeń z OC</div></div>
+    <div class="trust-item"><div class="num">0 zł</div><div class="lbl">tyle kosztuje sprawdzenie Twojej sprawy</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Jak to działa?</h2>
+    <p class="intro">Trzy proste kroki — resztą zajmuje się kancelaria. Ty tylko zostawiasz kontakt.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Zostawiasz kontakt</h3><p>Wypełniasz krótki formularz — zajmuje to mniej niż minutę. Opisujesz w kilku słowach, co się stało.</p></div>
+      <div class="step"><div class="n">2</div><h3>Bezpłatna analiza</h3><p>Współpracująca kancelaria odszkodowawcza ocenia Twoją sprawę i sprawdza, czy odszkodowanie zostało zaniżone.</p></div>
+      <div class="step"><div class="n">3</div><h3>Odzyskujesz różnicę</h3><p>Jeśli należy Ci się dopłata, kancelaria pomaga ją odzyskać. Decyzję o współpracy podejmujesz Ty.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="amounts">
+  <div class="wrap">
+    <h2>Ile realnie można odzyskać?</h2>
+    <p class="intro">Wysokość dopłaty zależy od sprawy, ale różnice potrafią być spore. To przykładowe rzędy wielkości przy zaniżonych szkodach komunikacyjnych.</p>
+    <div class="amount-grid">
+      <div class="amount"><div class="k">2 000–4 000 zł</div><div class="d">typowa dopłata przy drobniejszej kolizji</div></div>
+      <div class="amount"><div class="k">do kilkunastu tys. zł</div><div class="d">przy poważniejszych szkodach w pojeździe</div></div>
+      <div class="amount"><div class="k">0 zł ryzyka</div><div class="d">sprawdzenie sprawy nic nie kosztuje</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section reviews">
+  <div class="wrap">
+    <h2>Co mówią osoby, którym pomogliśmy</h2>
+    <p class="intro">Opinie osób, które sprawdziły swoją sprawę i odzyskały zaniżoną część odszkodowania.</p>
+    <div class="review-grid">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>„Byłem przekonany, że ubezpieczyciel wypłacił mi tyle, ile się należy. Okazało się, że brakowało ponad 3 tysiące. Cały kontakt zajął mi kilka minut.”</p>
+        <div class="who"><div class="av">M</div><div><b>Marek, Wrocław</b><span>kolizja na rondzie</span></div></div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>„Zostawiłam numer wieczorem, następnego dnia ktoś do mnie oddzwonił i spokojnie wszystko wytłumaczył. Bez żadnych nacisków.”</p>
+        <div class="who"><div class="av">A</div><div><b>Anna, Poznań</b><span>stłuczka na parkingu</span></div></div>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>„Auto sprzedałem rok temu i myślałem, że już nic nie odzyskam. A jednak się dało. Polecam każdemu, żeby chociaż sprawdził.”</p>
+        <div class="who"><div class="av">T</div><div><b>Tomasz, Katowice</b><span>szkoda sprzed 2 lat</span></div></div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:.82rem;color:#9aa39d;margin-top:24px">Opinie ilustracyjne. Wysokość i wynik każdej sprawy ustalane są indywidualnie.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2>Masz wątpliwości? To naturalne.</h2>
+    <p class="intro">Najczęstsze pytania osób, które zastanawiają się, czy warto zostawić zgłoszenie.</p>
+    <div class="faq-list">
+      <details open>
+        <summary>Czy to naprawdę nic nie kosztuje?</summary>
+        <p>Tak. Sprawdzenie Twojej sprawy i wstępna analiza są całkowicie bezpłatne i nie zobowiązują Cię do niczego. Dopiero jeśli zdecydujesz się na współpracę z kancelarią, ustalacie dalsze warunki — to Twoja decyzja.</p>
+      </details>
+      <details>
+        <summary>Co się dzieje po wysłaniu formularza?</summary>
+        <p>Twoje zgłoszenie trafia do nas, a następnie przekazujemy je współpracującej kancelarii odszkodowawczej. Skontaktuje się ona z Tobą telefonicznie, zwykle w ciągu jednego dnia roboczego, i powie, czy w Twojej sprawie jest szansa na dopłatę.</p>
+      </details>
+      <details>
+        <summary>Auto już sprzedałem / naprawiłem. Czy nadal mogę coś odzyskać?</summary>
+        <p>Najczęściej tak. Liczy się to, że w chwili szkody byłeś właścicielem pojazdu i że odszkodowanie zostało zaniżone. Nie musisz mieć już tego samochodu, żeby ubiegać się o dopłatę.</p>
+      </details>
+      <details>
+        <summary>Ile mam czasu na zgłoszenie?</summary>
+        <p>W sprawach komunikacyjnych z OC sprawcy zwykle są to 3 lata od szkody. Im wcześniej sprawdzisz sprawę, tym lepiej — dlatego warto zrobić to teraz, póki pamiętasz szczegóły.</p>
+      </details>
+      <details>
+        <summary>Czy moje dane są bezpieczne?</summary>
+        <p>Tak. Twoje dane przetwarzamy wyłącznie w celu analizy sprawy i przekazania ich kancelarii, zgodnie z polityką prywatności. Nie wysyłamy spamu i nie udostępniamy danych nikomu poza współpracującą kancelarią.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <h2>Nie zostawiaj swoich pieniędzy ubezpieczycielowi</h2>
+    <p>Sprawdzenie sprawy jest bezpłatne i do niczego nie zobowiązuje. Wystarczy minuta.</p>
+    <a href="#formularz" class="btn-primary">Sprawdź swoją dopłatę<svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>© <span id="rok"></span> CSC — wszelkie prawa zastrzeżone</div>
+    <div><a href="polityka-prywatnosci.html">Polityka prywatności</a></div>
+  </div>
+</footer>
+
+<script>document.getElementById('rok').textContent=new Date().getFullYear();</script>
+
+</body>
+</html>
