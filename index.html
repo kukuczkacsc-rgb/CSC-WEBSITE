@@ -136,40 +136,9 @@
       <div class="form-badge">Odpowiadamy w 24h</div>
       <h2>Sprawdź swoją sprawę</h2>
       <p class="sub">Zostaw dane — oddzwonimy i powiemy, czy należy Ci się dopłata.</p>
-      <!-- ====== WAŻNE: zamień adres w action="" na swój z Formspree ====== -->
-      <form action="https://formspree.io/f/TWOJ_KOD_FORMSPREE" method="POST">
-        <div class="field">
-          <label for="imie">Imię</label>
-          <input type="text" id="imie" name="imie" placeholder="Jak się do Ciebie zwracać?" required>
-        </div>
-        <div class="field">
-          <label for="telefon">Telefon</label>
-          <input type="tel" id="telefon" name="telefon" placeholder="np. 600 100 200" required>
-        </div>
-        <div class="field">
-          <label for="email">E-mail <span class="opt">(opcjonalnie)</span></label>
-          <input type="email" id="email" name="email" placeholder="adres@email.pl">
-        </div>
-        <div class="field">
-          <label for="oc">Czy otrzymałeś już odszkodowanie z OC?</label>
-          <select id="oc" name="otrzymane_odszkodowanie_oc" required>
-            <option value="" disabled selected>Wybierz…</option>
-            <option value="Tak">Tak, dostałem wypłatę</option>
-            <option value="Nie">Nie, jeszcze nie</option>
-            <option value="Nie wiem">Nie jestem pewien</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="opis">Krótko o sprawie — co się stało i kiedy?</label>
-          <textarea id="opis" name="opis_sprawy" placeholder="np. Kolizja w marcu 2024, ubezpieczyciel wypłacił zaniżoną kwotę za naprawę auta."></textarea>
-        </div>
-        <label class="consent">
-          <input type="checkbox" name="zgoda_rodo" required>
-          <span>Wyrażam zgodę na przetwarzanie moich danych osobowych w celu analizy sprawy i przekazania ich współpracującej kancelarii odszkodowawczej, zgodnie z <a href="polityka-prywatnosci.html" target="_blank">polityką prywatności</a>.</span>
-        </label>
-        <button type="submit" class="submit">Wyślij i sprawdź dopłatę →</button>
-        <p class="form-foot">🔒 Twoje dane są bezpieczne. Nie wysyłamy spamu.</p>
-      </form>
+      <!-- ====== FORMULARZ TALLY (dane przechowywane w UE) ====== -->
+      <iframe data-tally-src="https://tally.so/embed/Xxz7K4?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="1018" frameborder="0" marginheight="0" marginwidth="0" title="Formularz zgłoszeniowy CSC"></iframe>
+      <p class="form-foot">🔒 Twoje dane są bezpieczne i przechowywane na serwerach w UE. Wysyłając formularz, akceptujesz <a href="polityka-prywatnosci.html" target="_blank" style="color:var(--green);text-decoration:underline">politykę prywatności</a>.</p>
     </div>
   </div>
 </section>
@@ -276,6 +245,7 @@
 </footer>
 
 <script>document.getElementById('rok').textContent=new Date().getFullYear();</script>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
 
 </body>
 </html>
